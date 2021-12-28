@@ -1,0 +1,47 @@
+{
+  "displayName": "WebView",
+  "defaultWidth": 185,
+  "defaultHeight": 240,
+  "resizeX": true,
+  "resizeY": true,
+  "components": "./index.js",
+  "icon": "./example-thumbnail.png",
+  "props": [
+    {
+      "name": "docType",
+      "displayName": "What would you like to show?",
+      "defaultValue": "html",
+      "type": "text",
+      "control": {
+        "type": "menu",
+        "options": [
+          { "label": "URL", "value": "uri" },
+          { "label": "HTML", "value": "html" }
+        ]
+      }
+    },
+    {
+      "name": "uri",
+      "displayName": "URL",
+      "type": "text",
+      "default": "https://www.pragmaflow.com",
+      "enabled": { "docType": "uri" }
+    },
+    {
+      "name": "html",
+      "displayName": "HTML (uri encoded)",
+      "helpText": "If you don't know what this means, paste your html code [Here](https://meyerweb.com/eric/tools/dencoder/) and click Encode, then paste the results",
+      "type": "text",
+      "default": "<html><body><iframe src='https://www.pragmaflow.com'></body></html>",
+      "enabled": { "docType": "html" }
+    },
+    {
+      "name": "onLinkClick",
+      "displayName": "Check which link was clicked (Naitive Only)",
+      "type": "action",
+      "arguments": [
+        { "displayName": "Link URL", "type": "text" }
+      ]
+    }
+  ]
+}
