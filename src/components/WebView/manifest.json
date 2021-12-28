@@ -1,7 +1,7 @@
 {
   "displayName": "WebView",
-  "defaultWidth": 185,
-  "defaultHeight": 240,
+  "defaultWidth": 375,
+  "defaultHeight": 400,
   "resizeX": true,
   "resizeY": true,
   "components": "./index.js",
