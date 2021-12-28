@@ -5,10 +5,10 @@ class WebView extends Component {
 	render() {
 		const { uri, docType, html, onLinkClick } = this.props
 		const propsBuilder = {}
-		if (docType === 'uri') {
-			propsBuilder['src'] = uri
-		} else {
+		if (docType === 'html') {
 			propsBuilder['srcdoc'] = decodeURIComponent(html)
+		} else {
+			propsBuilder['src'] = uri
 		}
     let frameStyles = {
       borderStyle: 'none',
