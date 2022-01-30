@@ -36,11 +36,67 @@
       "enabled": { "docType": "html" }
     },
     {
+      "name": "useAllowList",
+      "displayName": "Use Allow List (native only)",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "allowList",
+      "displayName": "List of allowed sites",
+      "type": "list",
+      "enabled": {
+        "useAllowList": true
+      }
+    },
+    {
+      "name": "allowListUrl",
+      "displayName": "Url/Domain of allowed sites",
+      "type": "text",
+      "role": "listItem",
+      "reference": "allowList",
+      "enabled": {
+        "useAllowList": true
+      }
+    },
+    {
+      "name": "useBlockList",
+      "displayName": "Use Block List (native only)",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "blockList",
+      "displayName": "List of blocked sites",
+      "type": "list",
+      "enabled": {
+        "useBlockList": true
+      }
+    },
+    {
+      "name": "blockListUrl",
+      "displayName": "Url/Domain of blocked sites",
+      "type": "text",
+      "role": "listItem",
+      "reference": "blockList",
+      "enabled": {
+        "useBlockList": true
+      }
+    },
+    {
       "name": "onLinkClick",
       "displayName": "Check which link was clicked (Naitive Only)",
       "type": "action",
       "arguments": [
         { "displayName": "Link URL", "type": "text" }
+      ]
+    },
+    {
+      "name": "onBlockedLinkClick",
+      "displayName": "Triggered when a site was blocked (Naitive Only)",
+      "type": "action",
+      "arguments": [
+        { "displayName": "Blocked Link URL", "type": "text" }
       ]
     }
   ]

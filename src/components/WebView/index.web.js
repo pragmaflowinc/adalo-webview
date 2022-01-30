@@ -3,6 +3,7 @@ import { Text, View, StyleSheet } from 'react-native'
 
 class WebView extends Component {
 	render() {
+		console.log(this.props)
 		const { uri, docType, html, onLinkClick } = this.props
 		const propsBuilder = {}
 		if (docType === 'html') {

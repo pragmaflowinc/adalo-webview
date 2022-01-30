@@ -4,7 +4,17 @@ import { WebView as RNWebView } from 'react-native-webview';
 
 class WebView extends Component {
 	render() {
-		const { uri, docType, html, onLinkClick } = this.props
+		const { 
+			uri, 
+			docType, 
+			html, 
+			onLinkClick, 
+			useBlockList = false, 
+			useAllowList = false, 
+			blockList = [], 
+			allowList = [],
+			onBlockedLinkClick = () => {}
+		} = this.props
 		const propsBuilder = {}
 		if (docType === 'uri') {
 			propsBuilder['source'] = { uri } 
@@ -22,6 +32,24 @@ class WebView extends Component {
 				onShouldStartLoadWithRequest={request => {
 					if (onLinkClick) {
 						onLinkClick(request.url)
+					}
+					if (useBlockList) {
+						if (blockList.some(url => request.url.contains(url.allowListUrl))) {
+							if (onBlockedLinkClick) {
+								onBlockedLinkClick(request.url)
+							}
+							return false
+						} else {
+							return true
+						}
+					}
+					if (useAllowList) {
+						if (allowList.some(url => request.url.contains(url.allowListUrl))) {
+							return true
+						} else {
+							onBlockedLinkClick(request.url)
+							return false
+						}
 					}
 					return true
 				}}
