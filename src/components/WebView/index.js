@@ -29,10 +29,16 @@ class WebView extends Component {
 				allowsFullscreenVideo={true}
 				allowsInlineMediaPlayback={true}
 				mediaPlaybackRequiresUserAction={false}
-				onShouldStartLoadWithRequest={request => {
-					if (onLinkClick) {
-						onLinkClick(request.url)
+				onLoadProgress = {({nativeEvent}) => {
+					if (onLinkClick){
+						onLinkClick(nativeEvent.url)
 					}
+						
+				}}
+				onShouldStartLoadWithRequest={request => {
+					// if (onLinkClick) {
+					// 	onLinkClick(request.url)
+					// }
 					if (useBlockList) {
 						if (blockList.some(url => request.url.contains(url.allowListUrl))) {
 							if (onBlockedLinkClick) {
