@@ -22,7 +22,7 @@
     },
     {
       "name": "uri",
-      "displayName": "URL",
+      "displayName": "URL (Must include `http://`, `https://`, `ftp://` or `data:`)",
       "type": "text",
       "default": "https://www.pragmaflow.com",
       "enabled": { "docType": "uri" }
@@ -85,7 +85,7 @@
     },
     {
       "name": "onLinkClick",
-      "displayName": "Check which link was clicked (Naitive Only)",
+      "displayName": "Check which link was clicked (Native Only)",
       "type": "action",
       "arguments": [
         { "displayName": "Link URL", "type": "text" }
@@ -93,7 +93,7 @@
     },
     {
       "name": "onBlockedLinkClick",
-      "displayName": "Triggered when a site was blocked (Naitive Only)",
+      "displayName": "Triggered when a site was blocked (Native Only)",
       "type": "action",
       "arguments": [
         { "displayName": "Blocked Link URL", "type": "text" }
