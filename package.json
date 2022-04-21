@@ -1,7 +1,7 @@
 {
   "name": "adalo-webview",
   "description": "A WebView for Adalo with a little extra control",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",
@@ -28,6 +28,6 @@
     "react-native-web": "^0.9.5"
   },
   "dependencies": {
-    "react-native-webview": "^11.15.0"
+    "react-native-webview": "^11.18.1"
   }
 }
