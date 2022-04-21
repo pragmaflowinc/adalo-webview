@@ -16,8 +16,21 @@ class WebView extends Component {
 			onBlockedLinkClick = () => {}
 		} = this.props
 		const propsBuilder = {}
+		
+
 		if (docType === 'uri') {
-			propsBuilder['source'] = { uri } 
+			// if (uri.includes("adalo.com") || uri =="" || uri =="/"){
+				
+				
+			// 	propsBuilder['source'] = { 
+			// 		html: decodeURIComponent("<p>We're Hiding the window Preview To Avoid Adalo Editor Inception</p><p>This Happens when the webview component is pointed to *.adalo.com or to magic text</p>")
+			// 	} 
+			
+			// } else {
+				
+				propsBuilder['source'] = { uri } 
+			// }
+
 		} else {
 
 			propsBuilder['source'] = { html: decodeURIComponent(html) }
@@ -29,10 +42,16 @@ class WebView extends Component {
 				allowsFullscreenVideo={true}
 				allowsInlineMediaPlayback={true}
 				mediaPlaybackRequiresUserAction={false}
-				onShouldStartLoadWithRequest={request => {
-					if (onLinkClick) {
-						onLinkClick(request.url)
+				onLoadProgress = {({nativeEvent}) => {
+					if (onLinkClick){
+						onLinkClick(nativeEvent.url)
 					}
+						
+				}}
+				onShouldStartLoadWithRequest={request => {
+					// if (onLinkClick) {
+					// 	onLinkClick(request.url)
+					// }
 					if (useBlockList) {
 						if (blockList.some(url => request.url.contains(url.allowListUrl))) {
 							if (onBlockedLinkClick) {

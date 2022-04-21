@@ -6,11 +6,29 @@ class WebView extends Component {
 		console.log(this.props)
 		const { uri, docType, html, onLinkClick } = this.props
 		const propsBuilder = {}
-		if (docType === 'html') {
+		if (docType === 'html' || uri.includes("adalo.com") || uri =="" || uri.charAt(0) =="/" || uri == false) {
+		
 			propsBuilder['srcdoc'] = decodeURIComponent(html)
+			console.log("html uri: ",uri)
+		
+		// } else {
+		
+		// 	if (uri.includes("adalo.com") || uri =="" || uri.charAt(0) =="/" || uri == false){
+		
+		// 		console.log("adalo detected, uri: ",uri)
+
+		// 		// let noAdalo = "We're Hiding the window Preview To Avoid Adalo Editor Inception. This Happens when the webview component is pointed to *.adalo.com or to magic text"
+		// 		propsBuilder['srcdoc'] = decodeURIComponent("https://pragmaflow.com")
+				
+			
 		} else {
-			propsBuilder['src'] = uri
-		}
+	
+			console.log("regular uri: ",uri)
+			propsBuilder['src'] = uri  
+	
+	}
+	
+
     let frameStyles = {
       borderStyle: 'none',
       borderWidth: 0,
