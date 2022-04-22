@@ -3,6 +3,13 @@ import { Text, View, StyleSheet } from 'react-native'
 
 class WebView extends Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			statusText: ""
+		}
+	}
+
 	shouldComponentUpdate(nextProps, nextState) {
 		//Lets see if we can stop the large amounts of re-renders.
 		if (this.props.docType === nextProps.docType && this.props.uri === nextProps.uri) {
@@ -45,6 +52,7 @@ class WebView extends Component {
 		return (
 			<View style={{ height: this.props._height, width: this.props._width, backgroundColor: 'rgba(0, 0, 0, 0)' }}>
 				<iframe
+					onLoad={() => this.setState({ statusText: "OnLoad" })}
 					ref={elem => this.iframeRef = elem}
 					webkitAllowFullScreen
 					mozallowfullscreen

@@ -15,8 +15,14 @@
       "control": {
         "type": "menu",
         "options": [
-          { "label": "URL", "value": "uri" },
-          { "label": "HTML", "value": "html" }
+          {
+            "label": "URL",
+            "value": "uri"
+          },
+          {
+            "label": "HTML",
+            "value": "html"
+          }
         ]
       }
     },
@@ -25,7 +31,16 @@
       "displayName": "URL (Must include `http://`, `https://`, `ftp://` or `data:`)",
       "type": "text",
       "default": "https://www.pragmaflow.com",
-      "enabled": { "docType": "uri" }
+      "enabled": {
+        "docType": "uri"
+      }
+    },
+    {
+      "name": "onURLIsSPA",
+      "displayName": "Is the URL a `Single Page App` web application?",
+      "helpText": "If you are unsure, leave this unchecked. This can help if your `On Click` custom actions are not being fired for click events within the webview.",
+      "type": "boolean",
+      "defaultValue": false
     },
     {
       "name": "html",
@@ -33,7 +48,9 @@
       "helpText": "If you don't know what this means, paste your html code [Here](https://meyerweb.com/eric/tools/dencoder/) and click Encode, then paste the results",
       "type": "text",
       "default": "<html><body><iframe src='https://www.pragmaflow.com'></body></html>",
-      "enabled": { "docType": "html" }
+      "enabled": {
+        "docType": "html"
+      }
     },
     {
       "name": "useAllowList",
@@ -88,7 +105,10 @@
       "displayName": "Check which link was clicked (Native Only)",
       "type": "action",
       "arguments": [
-        { "displayName": "Link URL", "type": "text" }
+        {
+          "displayName": "Link URL",
+          "type": "text"
+        }
       ]
     },
     {
@@ -96,7 +116,10 @@
       "displayName": "Triggered when a site was blocked (Native Only)",
       "type": "action",
       "arguments": [
-        { "displayName": "Blocked Link URL", "type": "text" }
+        {
+          "displayName": "Blocked Link URL",
+          "type": "text"
+        }
       ]
     }
   ]
