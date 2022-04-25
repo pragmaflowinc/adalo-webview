@@ -1,5 +1,5 @@
 {
-  "name": "adalo-webview",
+  "name": "adalo-webview-test-mitch",
   "description": "A WebView for Adalo with a little extra control",
   "version": "1.0.6",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "adalo": {
     "logo": "./example-logo.png",
-    "displayName": "DD Adalo WebView",
+    "displayName": "Adalo WebView by PragmaFlow",
     "components": [
       {
         "name": "WebView",
