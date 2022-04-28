@@ -1,7 +1,7 @@
 {
   "name": "adalo-webview-test-mitch",
   "description": "A WebView for Adalo with a little extra control",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",
@@ -15,7 +15,7 @@
     "displayName": "Adalo WebView by PragmaFlow",
     "components": [
       {
-        "name": "WebView",
+        "name": "Mitch WebView",
         "manifest": "./src/components/WebView/manifest.json"
       }
     ]
