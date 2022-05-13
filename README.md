@@ -6,7 +6,7 @@
 ## Known Bugs
 - Currently does not receive confirmation page message from calendly, which contains event UUID.
 
-# Goal
+## Intention
 A webview for adalo that can read the current site url (native only) and can take actions based on that url.
 
 ## Usage
