@@ -1,5 +1,5 @@
 {
-  "name": "adalo-webview-test-mitch",
+  "name": "adalo-webview",
   "description": "A WebView for Adalo with a little extra control",
   "version": "1.0.10",
   "main": "index.js",
